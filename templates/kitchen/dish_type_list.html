@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Dish Type List
+
+  </h1>
+
+  <br>
+  {% if dish_type_list %}
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+
+      </tr>
+
+      {% for type in dish_type_list %}
+        <tr>
+          <td>
+              {{ type.id }}
+          </td>
+          <td>
+              {{ type.name }}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  {% else %}
+      <p>There are no manufacturers in the service.</p>
+  {% endif %}
+{% endblock %}

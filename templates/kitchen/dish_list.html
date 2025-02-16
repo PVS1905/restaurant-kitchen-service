@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Dish list
+  </h1>
+  <br>
+  {% if dish_list %}
+    <ul>
+      {% for dish in dish_list %}
+        <li>
+          {{ dish.dish_type.name }}:
+            {% for word in dish.name.split %}
+              {{ word }}{% if not forloop.last %}, {% else %}.{% endif %}
+    {% endfor %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no cars in taxi</p>
+  {% endif %}
+{% endblock %}
