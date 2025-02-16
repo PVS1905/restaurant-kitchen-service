@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "kitchen",
+    "crispy_forms",
+    "crispy_bootstrap4",
 ]
 
 MIDDLEWARE = [
@@ -131,3 +133,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "kitchen.Cook"
 
 LOGIN_REDIRECT_URL = "/"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
