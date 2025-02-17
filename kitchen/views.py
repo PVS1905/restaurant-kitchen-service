@@ -5,8 +5,14 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views import generic
 
-from .forms import DishTypeSearchForm, DishSearchForm, CookSearchForm, DishForm, CookCreationForm, \
+from .forms import (
+    DishTypeSearchForm,
+    DishSearchForm,
+    CookSearchForm,
+    DishForm,
+    CookCreationForm,
     CookYearsExperienceUpdateForm
+)
 from .models import Cook, DishType, Dish
 
 
@@ -29,6 +35,7 @@ def index(request):
     }
 
     return render(request, "kitchen/index.html", context=context)
+
 
 class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
@@ -101,6 +108,7 @@ class DishListView(LoginRequiredMixin, generic.ListView):
 class DishDetailView(LoginRequiredMixin, generic.DetailView):
     model = Dish
 
+
 class DishCreateView(LoginRequiredMixin, generic.CreateView):
     model = Dish
     form_class = DishForm
@@ -116,6 +124,7 @@ class DishUpdateView(LoginRequiredMixin, generic.UpdateView):
 class DishDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Dish
     success_url = reverse_lazy("kitchen:dish-list")
+
 
 class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
@@ -160,6 +169,7 @@ class CookYearsExperienceUpdateView(LoginRequiredMixin, generic.UpdateView):
 class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Cook
     success_url = reverse_lazy("kitchen:cook-list")
+
 
 @login_required
 def toggle_assign_to_dish(request, pk):

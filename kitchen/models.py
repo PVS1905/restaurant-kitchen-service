@@ -15,12 +15,13 @@ class Cook(AbstractUser):
     def __str__(self):
         return f"{self.username} ({self.first_name} {self.last_name})"
 
-
     def get_absolute_url(self):
         return reverse("kitchen:cook-detail", kwargs={"pk": self.pk})
 
     def display_years_of_experience(self):
-        return self.years_of_experience if self.years_of_experience is not None else ""
+        return (self.years_of_experience
+                if self.years_of_experience is not None
+                else "")
 
 
 class DishType(models.Model):
@@ -37,11 +38,18 @@ class Dish(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField()
     price = models.DecimalField(decimal_places=2, max_digits=10)
-    dish_type = models.ForeignKey(DishType, on_delete=models.CASCADE, related_name="dishes")
-    cooks = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="dishes")
+    dish_type = models.ForeignKey(
+        DishType,
+        on_delete=models.CASCADE,
+        related_name="dishes"
+    )
+    cooks = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name="dishes"
+    )
 
     class Meta:
         ordering = ["name"]
 
     def __str__(self):
-        return  f"{self.name}: {self.description} - {self.price}"
+        return f"{self.name}: {self.description} - {self.price}"
