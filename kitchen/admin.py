@@ -32,4 +32,3 @@ class DishAdmin(admin.ModelAdmin):
 
 
 admin.site.register(DishType)
-
