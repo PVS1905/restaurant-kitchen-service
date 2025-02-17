@@ -19,6 +19,9 @@ class Cook(AbstractUser):
     def get_absolute_url(self):
         return reverse("kitchen:cook-detail", kwargs={"pk": self.pk})
 
+    def display_years_of_experience(self):
+        return self.years_of_experience if self.years_of_experience is not None else ""
+
 
 class DishType(models.Model):
     name = models.CharField(max_length=100)

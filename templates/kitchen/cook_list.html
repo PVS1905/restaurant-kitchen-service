@@ -28,12 +28,12 @@
         <td><a href="{{ cook.get_absolute_url }}">{{ cook.username }} {% if user == cook %} (Me){% endif %}</a></td>
         <td>{{ cook.first_name }}</td>
         <td>{{ cook.last_name }}</td>
-        <td>{{ cook.years_of_experience }}</td>
+        <td>{{ cook.display_years_of_experience }}</td>
       </tr>
     {% endfor %}
 
     </table>
     {% else %}
-      <p>There are no drivers in the service.</p>
+      <p>There are no cooks in the service.</p>
     {% endif %}
 {% endblock %}
