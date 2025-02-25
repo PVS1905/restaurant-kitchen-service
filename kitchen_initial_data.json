@@ -1,0 +1,72 @@
+[
+  {
+    "model": "kitchen.Cook",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "chef_john",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-10-01T12:00:00Z",
+      "years_of_experience": 5
+    }
+  },
+  {
+    "model": "kitchen.Cook",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "chef_jane",
+      "first_name": "Jane",
+      "last_name": "Smith",
+      "email": "jane.smith@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-10-01T12:00:00Z",
+      "years_of_experience": 10
+    }
+  },
+  {
+    "model": "kitchen.DishType",
+    "pk": 1,
+    "fields": {
+      "name": "Soup"
+    }
+  },
+  {
+    "model": "kitchen.DishType",
+    "pk": 2,
+    "fields": {
+      "name": "Dessert"
+    }
+  },
+  {
+    "model": "kitchen.Dish",
+    "pk": 1,
+    "fields": {
+      "name": "Tomato Soup",
+      "description": "Classic tomato soup with basil",
+      "price": "5.99",
+      "dish_type": 1,
+      "cooks": [1]
+    }
+  },
+  {
+    "model": "kitchen.Dish",
+    "pk": 2,
+    "fields": {
+      "name": "Chocolate Cake",
+      "description": "Rich chocolate cake with frosting",
+      "price": "8.99",
+      "dish_type": 2,
+      "cooks": [2]
+    }
+  }
+]
