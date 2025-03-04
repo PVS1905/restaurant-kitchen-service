@@ -6,7 +6,14 @@ The project is designed to improve communication and rules among chefs in the ki
 ## Installation
 
 Python3 must be arleady installed
+Use the following command to load prepared data from a fixture to test and debug your code:
+```shell
+python manage.py loaddata restaurant_kitchen_service.json
+```
+After loading data from the fixture, you can use the following superuser (or create another one by yourself):
 
+Login: test_cook
+Password: 12345test
 
 ```shell
 git clone https://github.com/PVS1905/restaurant-kitchen-service.git
