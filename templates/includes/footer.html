@@ -1,0 +1,25 @@
+
+  <footer class="footer pt-5 mt-5">
+    <hr class="horizontal dark mb-5">
+    <div class="container">
+      <div class=" row">
+        <div class="col-md-3 mb-4 ms-auto">
+         {% if request.path == '/' %}
+            <div>
+                <h6 class="text-gradient text-primary font-weight-bolder">Visited this page
+                    {{ num_visits }} time{{ num_visits|pluralize }}.</h6>
+            </div>
+        {% endif %}
+
+        </div>
+        <div class="col-12">
+          <div class="text-center">
+            <p class="my-4 text-sm">
+              Soft &copy; <a  href="/" target="_blank">Restaurant kitchen</a>
+              - Coded by <a href="https://t.me/Viktor6646" target="_blank">Viktor</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
